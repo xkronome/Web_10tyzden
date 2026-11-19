@@ -1,0 +1,189 @@
+/*formular css*/
+/**
+Nerozumiem ci ma byt tu alebo vo fromular_zadanie.css, lebo to hovori aj:
+
+Formulár musí byť naštýlovaný v style.css:
+
+ale aj
+
+Podstránka musí mať topbar.html ako v predošlých stránkach a svoj
+vlastný CSS stylesheet formular_zadanie.css
+
+???
+**/
+
+/*formulár musí byť vizuálne oddelený od zvyšku stránky
+-> have a class in style.css called .underTopbar , since i want to use it in another 
+site
+
+.underTopbar{
+    margin-top: 40px;
+}
+
+*/
+
+/*jednotlivé input fieldy musia mať jednotný vzhľad
+-> fieldy su input, label, textarea, select, p
+*/
+
+/*definujte stav :focus pre input fieldy*/
+:root{
+    --width: 200px;
+    --height: 25px;
+    --Tsize: 20px;
+    --texteaWidth: 300;
+    --texteaHeight: 100;
+    --defColor: rgb(18, 15, 177, 0.3);
+    --interactColor: rgb(164, 124, 177);
+    --fontSize: large;
+}
+
+label{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: var(--fontSize);
+    text-align: center;
+    margin-left: 2%;
+}
+
+p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: var(--fontSize);
+    margin-left: 2%;
+}
+
+
+input{
+    background-color: var(--defColor);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: var(--fontSize);
+    
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+    border-width: 0;
+    width: var(--width);
+    height: var(--height);
+    
+}
+
+input[type="date"]{
+    text-align: center;
+}
+
+/*radio tlacitka*/
+input[type="radio"]{
+    accent-color: var(--defColor);
+
+    margin-left: 5px;
+}
+
+input:focus{
+    background-color: var(--interactColor);
+    outline: none;
+    
+}
+
+option{
+    background-color: var(--defColor);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: var(--fontSize);
+}
+
+textarea{
+    background-color: var(--defColor);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: var(--fontSize);
+
+    margin-left: 2%;
+    margin-bottom: 10px;
+    
+    border-radius: 10px;
+    border-width: 0;
+    outline: none;
+    width: var(--texteaWidth);
+    height: var(--texteaHeight);
+    
+}
+
+textarea:focus{
+    background-color: var(--interactColor);
+}
+
+select{
+    background-color: var(--defColor);
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: var(--fontSize);
+
+    margin-left: 2%;
+    border-radius: 10px;
+    border-width: 0;
+    outline: none;
+    width: var(--width);
+    height: var(--height);
+}
+
+button{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: var(--fontSize);
+
+    margin-left: 2%;
+    margin-bottom: 10px;
+    background-color: var(--defColor);
+    border-radius: 10px;
+    border-width: 0;
+    width: var(--width);
+    height: var(--height);
+
+}
+
+button[type="submit"]{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: var(--fontSize);
+
+    margin-left: 2%;
+    margin-bottom: 10px;
+    background-color: var(--defColor);
+    border-radius: 10px;
+    border-width: 0;
+    width: var(--width);
+    height: var(--height);
+
+}
+/*definujte stav :hover pre tlačidlo*/
+button:hover{
+    background-color: var(--interactColor);
+}
+
+
+    
+/*NAHLAD*/
+.formular-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+    margin-left: 2%;
+}
+
+/* Form */
+#myform {
+    flex: 2;
+    min-width: 0;
+}
+
+/* Preview */
+.nahlad {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background-color: var(--defColor);
+    margin-top: 0;
+}

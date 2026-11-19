@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+    <body>
+        <div class="NOTICE">
+            <h1> NOTICE !</h1>
+            <p> Na prvom cvičení som chýbal a nopodarilo sa mi zohnať príklady, takže improvizujem.</p>
+        </div>
+
+        <h1>Formulár:</h1>
+        <form id="myform">
+            
+             <!--a. Meno a priezvisko – textové pole-->
+            <label  for="fname_input">Meno:</label>
+            <input  type="text" id="fname_input" name="fname_input"><br>
+            
+            <label for="lname_input">Priezvisko:</label>
+            <input type="text"  id="lname_input" name="lname_input"><br>
+            
+            <!--E-mail – pole typu email-->
+            <label for="email_input">E-mail:</label>
+            <input type="text" id="email_input" name="email_input"><br>
+
+            <!--Moze byt?-->
+            <p>Je improvizácia dostatočná?</p>
+            <input type="radio" id="ano" name="hodnotenie" value="Áno">
+            <label for="ano">Áno</label><br>
+            <input type="radio" id="nie" name="hodnotenie" value="Nie">
+            <label for="nie">Nie</label><br>
+        </form>
+
+    </body>
+</html>

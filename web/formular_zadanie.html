@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="formular_zadanie.css">
+    <script src="app.js" defer></script>
+    <script src="formular_zadanie.js" defer></script>
+</head>
+
+<body>
+    <div class="formular-container">
+
+        <form id="myform">
+            <!--a. Meno a priezvisko – textové pole-->
+            <label class="underTopbar" for="fname_input">Meno:</label>
+            <input class="underTopbar" type="text" id="fname_input" name="fname_input"><br>
+            
+            <label for="lname_input">Priezvisko:</label>
+            <input type="text"  id="lname_input" name="lname_input"><br>
+            
+            <!--E-mail – pole typu email-->
+            <label for="email_input">E-mail:</label>
+            <input type="text" id="email_input" name="email_input"><br>
+            
+            <!--Telefónne číslo – pole typu tel-->
+            <label for="tnumber_input">Telefónne čislo</label>
+            <input type="tel" id="tnumber_input" name="tnumber_input"><br>
+            
+            <!--Dátum narodenia – pole typu date-->
+            <label for="bdate">Dátum narodenia</label>
+            <input type="date" id="bdate" name="bdate"><br>
+            
+            <!--Kurz – výber z možností HTML, CSS a JavaScript pomocou select-->
+            <label for="kurz">Vyber kurz:</label>
+            <select id="kurz" name="kurz" >
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+            </select>
+            
+            <!--Úroveň – výber Beginner, Intermediate alebo Advanced pomocou radio-->
+            <p>Úroveň:</p>
+            <input type="radio" id="beginner" name="uroven" value="beginner">
+            <label for="beginner">Beginner</label><br>
+            <input type="radio" id="intermediate" name="uroven" value="intermediate">
+            <label for=" intermediate"> Intermediate</label><br>
+            <input type="radio" id="advanced" name="uroven" value="advanced">
+            <label for=" advanced"> Advanced</label><br>
+            
+            <!--Poznámka – viacriadkové textové pole textarea-->
+            <br>
+            <p>Poznámky:</p>
+            <textarea id="poznamka" name="poznamka" rows="5" cols="30"></textarea>
+            <br>
+            
+            <!--Súhlas s podmienkami – checkbox-->
+            <br>
+            <p>Súhlas s podmienkami</p>
+            <input type="checkbox" id="suhlas">
+            <label for="checkbox">Áno</label>
+            <br>
+            
+            <!--Tlačidlo na odoslanie formulára-->
+            <br>
+            <button id="submit" type="submit">Submit</button>
+            
+            <!--
+                3) Vedľa formulára vytvorte živý náhľad zadaných údajov:
+                a. formulár a náhľad musia byť na desktopovej obrazovke
+                umiestnené vedľa seba
+                b. náhľad musí zobrazovať minimálne meno a priezvisko, e-mail,
+                kurz, úroveň a poznámku
+                c. zobrazené údaje sa musia meniť priebežne počas vypĺňania
+                formulára
+                d. na získanie elementov použite document.getElementById()
+                e. na sledovanie zmien použite eventy input a/alebo change
+                f. stránka sa pri aktualizácii náhľadu nesmie obnovovať
+                -->
+                
+                
+            </form>
+                <div class="nahlad">
+                    
+                    <h2>Náhľad</h2>
+                    
+                    <div class="nahlad-udaje">
+                        <p>Meno: <span id = "fname_output"></span></p>
+                        <p>Priezvisko: <span id = "lname_output"></span></p>
+                        <p>e-mail: <span id = "email_output"></span> </p>
+                        <p>Tel. číslo: <span id = "tnumber_output"></span> </p>
+                        <p>Kurz: <span id = "kurz_output"></span></p>
+                        <p>Úroveň: <span id = "uroven_output"></span> </p>
+                        <p>Poznámka: <span id = "poznamka_output"></span></p>
+                    </div>
+                </div>
+            </div>
+            </body>
+        
+        </html>
