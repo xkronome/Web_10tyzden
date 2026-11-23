@@ -1,5 +1,12 @@
 function nacitajKnihy(){
-    fetch("/api/knihy")
+    
+    const hladat = document.getElementById("hladatInput").value;
+    const zoradit = document.getElementById("zoraditSelect").value;
+    const smer = document.getElementById("smerSelect").value;
+    
+    const params = new URLSearchParams({ hladat, zoradit, smer });
+    
+    fetch(`/api/knihy?${params}`)
     .then(odpoved => odpoved.json())
     .then(knihy => {
         const zoznam = document.getElementById("zoznam");
@@ -79,6 +86,31 @@ function nacitajKnihy(){
                 zoznam.appendChild(riadok);
         });
     });
+}
+
+function zobrazAktualnehoPouzivatela() {
+    const stavPrihlasenia = document.getElementById("stavPrihlasenia");
+    const ulozenyPouzivatel = sessionStorage.getItem("prihlasenyPouzivatel");
+    let pouzivatel = null;
+
+    if (ulozenyPouzivatel) {
+        try {
+            pouzivatel = JSON.parse(ulozenyPouzivatel);
+        } catch (error) {
+            console.error("Neplatne udaje pouzivatela v sessionStorage:", error);
+        }
+    }
+
+    if (pouzivatel && typeof pouzivatel.meno === "string" && pouzivatel.meno.trim()) {
+        stavPrihlasenia.textContent = `Prihlásený používateľ: ${pouzivatel.meno}`;
+        return;
+    }
+
+    stavPrihlasenia.textContent = "Nie ste prihlásený. ";
+    const prihlasenieOdkaz = document.createElement("a");
+    prihlasenieOdkaz.href = "prihlasenie.html";
+    prihlasenieOdkaz.textContent = "Prihláste sa";
+    stavPrihlasenia.appendChild(prihlasenieOdkaz);
 }
 
 const formular = document.getElementById("formular");
@@ -162,4 +194,19 @@ document.getElementById("zrusitForm").addEventListener("click", () => {
     formularDialog.close();
 });
 
+zobrazAktualnehoPouzivatela();
 nacitajKnihy();
+
+// Reakcia na zmenu filtra alebo zoradenia ( pridajte na koniec knihy .js)
+document.getElementById("hladatInput").addEventListener("input",
+    nacitajKnihy);
+document.getElementById("zoraditSelect").addEventListener("change",
+        nacitajKnihy);
+document.getElementById("smerSelect").addEventListener("change",
+    nacitajKnihy);
+document.getElementById("resetFilterBtn").addEventListener("click", () => {
+        document.getElementById("hladatInput").value = "";
+        document.getElementById("zoraditSelect").value = "id";
+        document.getElementById("smerSelect").value = "ASC";
+        nacitajKnihy();
+});

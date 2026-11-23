@@ -11,6 +11,7 @@
 <body>
     <main>
         <h1>Moja kniznica</h1>
+        <p id="stavPrihlasenia"></p>
         <button id="novaKnihaBtn" type="button">Pridať knihu</button>
 
         <dialog id="formularDialog">
@@ -26,6 +27,22 @@
             </form>
         </dialog>
 
+        <div id="filterPanel" style="margin: 15px 0;">
+            <input id="hladatInput" type="text" placeholder="Hladat nazov alebo autora ...">
+            <select id="zoraditSelect">
+                <option value="id">Zoradit podla : ID </option>
+                <option value="nazov">Nazov </option>
+                <option value="autor">Autor </option>
+                <option value="rok">Rok vydania </option>
+                <option value="cena">Cena </option>
+            </select>
+            <select id="smerSelect">
+                <option value="ASC">Vzostupne (ASC)</option>
+                <option value="DESC">Zostupne (DESC)</option>
+            </select>
+            <button id="resetFilterBtn" type="button">Zrusit filter</button>
+        </div>
+
         <table border="1" cellpadding="8">
             <thead>
                 <tr>
@@ -37,9 +54,7 @@
                     <th>Akcia</th>
                 </tr>
             </thead>
-            <tbody id="zoznam"></tbody>
-            
-
+            <tbody id="zoznam"></tbody>            
         </table>
     </main>
 </body>
